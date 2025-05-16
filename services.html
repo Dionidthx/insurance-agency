@@ -14,11 +14,13 @@
                 <li><a href="index.html">Головна</a></li>
                 <li><a href="services.html">Послуги</a></li>
                 <li><a href="contacts.html">Контакти</a></li>
+                <li><button onclick="toggleMerch()">Мерч</button></li>
+        <li><button onclick="openCart()">🛒 Кошик</button></li>
             </ul>
         </nav>
     </header>
 
-    < <main class="grid-container">
+     <main class="grid-container">
         <section class="services">
             <article>
                 <img src="car-insurance.jpg" alt="Автострахування">
@@ -37,6 +39,35 @@
             </article>
         </section>
     </main>
+<section id="merch-section">
+    <button class="close-btn" onclick="toggleMerch()">&times;</button>
+    <h2>Мерч</h2>
+    <div class="services">
+      <article>
+        <img src="shirt.jpg" alt="Футболка">
+        <h3>Футболка</h3>
+        <p>₴400</p>
+        <button onclick="addToCart('Футболка', 400)">Додати в кошик</button>
+      </article>
+      <article>
+        <img src="mug.jpg" alt="Горнятко">
+        <h3>Горнятко</h3>
+        <p>₴150</p>
+        <button onclick="addToCart('Горнятко', 150)">Додати в кошик</button>
+      </article>
+    </div>
+  </section>
 
+  <!-- Модальне вікно кошика -->
+  <div id="cart-modal" class="hidden">
+    <div>
+      <button class="close-btn" onclick="closeCart()">&times;</button>
+      <h2>Кошик</h2>
+      <div id="cart-items"></div>
+      <p><strong>Загальна сума: ₴<span id="total">0</span></strong></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

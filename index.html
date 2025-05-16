@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страхове агентство</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Головна - Страхове агентство</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Надійне страхування</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Головна</a></li>
-                <li><a href="services.html">Послуги</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Надійне страхування</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="services.html">Послуги</a></li>
+        <li><a href="contacts.html">Контакти</a></li>
+        <li><button onclick="toggleMerch()">Мерч</button></li>
+        <li><button onclick="openCart()">🛒 Кошик</button></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="grid-container">
-        <section class="hero">
-            <img src="insurance.jpg" alt="Страхування – спокійне життя">
-            <h2>Ваш спокій – наша турбота</h2>
-            <p>Пропонуємо широкий спектр страхових послуг для вас та вашої родини.</p>
-        </section>
-    </main>
+  <main class="grid-container">
+    <section class="hero">
+      <img src="insurance.jpg" alt="Страхування – спокійне життя">
+      <h2>Ваш спокій – наша турбота</h2>
+      <p>Пропонуємо широкий спектр страхових послуг для вас та вашої родини.</p>
+    </section>
+  </main>
 
-    
+ 
+  <section id="merch-section">
+    <button class="close-btn" onclick="toggleMerch()">&times;</button>
+    <h2>Мерч</h2>
+    <div class="services">
+      <article>
+        <img src="shirt.jpg" alt="Футболка">
+        <h3>Футболка</h3>
+        <p>₴400</p>
+        <button onclick="addToCart('Футболка', 400)">Додати в кошик</button>
+      </article>
+      <article>
+        <img src="mug.jpg" alt="Горнятко">
+        <h3>Горнятко</h3>
+        <p>₴150</p>
+        <button onclick="addToCart('Горнятко', 150)">Додати в кошик</button>
+      </article>
+    </div>
+  </section>
+
+  
+  <div id="cart-modal" class="hidden">
+    <div>
+      <button class="close-btn" onclick="closeCart()">&times;</button>
+      <h2>Кошик</h2>
+      <div id="cart-items"></div>
+      <p><strong>Загальна сума: ₴<span id="total">0</span></strong></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
